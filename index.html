@@ -1,0 +1,555 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寵AI智FUN館 - 寵物AI快閃店行銷方案</title>
+    <!-- 引入外部資源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Tailwind 自訂配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80', // 輕食風淺綠（主色）
+                        secondary: '#38bdf8', // 淺藍（輔色）
+                        neutral: '#f8fafc', // 淺灰背景
+                        dark: '#1e293b' // 深灰文字
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:border-primary hover:-translate-y-1;
+            }
+            .section-title {
+                @apply flex items-center gap-3 text-[clamp(1.5rem,3vw,2rem)] font-bold text-dark mb-6 border-b-2 border-primary pb-2;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark min-h-screen">
+    <!-- 頁首 -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-3 mb-4 md:mb-0">
+                <i class="fa-solid fa-paw text-primary text-3xl"></i>
+                <h1 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold">寵AI智FUN館</h1>
+            </div>
+            <p class="text-sm md:text-base text-gray-600">寵物AI快閃店 | 國際寵物日專案</p>
+        </div>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 方案簡介 -->
+        <section class="mb-12 animate-fade-in">
+            <div class="bg-white rounded-xl p-6 shadow-md">
+                <h2 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-4 text-center">AI驅動寵物體驗 · 科技賦能品牌價值</h2>
+                <p class="text-gray-600 text-center max-w-3xl mx-auto">
+                    透過AI互動模組與快閃店體驗，整合寵物福祉理念，打造科技與溫度兼具的品牌接觸點，同步收集用戶數據支撐後續產品開發。
+                </p>
+            </div>
+        </section>
+
+        <!-- 1. 項目背景 -->
+        <section class="mb-12 opacity-0" id="section1">
+            <h2 class="section-title">
+                <i class="fa-solid fa-clipboard-list text-primary"></i>
+                項目背景
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 專案緣起 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-secondary"></i>專案緣起
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <span>市場需求：寵物產業成長，飼主需「智慧化照護+互動體驗」</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <span>品牌策略：展示AI技術，提升品牌能見度</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <span>時機配合：國際寵物日（4/11），推廣寵物福祉</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 專案章程核心 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-file-contract text-secondary"></i>專案章程核心
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex justify-between">
+                            <span class="font-medium">專案名稱：</span>
+                            <span>寵物AI快閃店體驗專案</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-medium">時程：</span>
+                            <span>2025/10/02 ~ 2026/04/15</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-medium">總預算：</span>
+                            <span>新台幣 2000 萬元</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-medium">核心目標：</span>
+                            <span>3000+人次體驗、1000+份數據回饋</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 市場分析 -->
+        <section class="mb-12 opacity-0" id="section2">
+            <h2 class="section-title">
+                <i class="fa-solid fa-chart-line text-primary"></i>
+                市場分析
+            </h2>
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-trend-up text-secondary"></i>市場核心洞察
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-paw text-primary mt-1"></i>
+                                <span>寵物「人性化」趨勢：飼主願為寵物健康、互動體驗支付溢價</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-microchip text-primary mt-1"></i>
+                                <span>AI技術缺口：現有寵物產品科技化程度低，智慧互動需求未被滿足</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-calendar-star text-primary mt-1"></i>
+                                <span>節點效應：國際寵物日為流量高峰，易引發社群話題與參與熱潮</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 市場需求圖表 -->
+                    <div class="h-64">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 整體評價 -->
+        <section class="mb-12 opacity-0" id="section3">
+            <h2 class="section-title">
+                <i class="fa-solid fa-star-half-stroke text-primary"></i>
+                整體評價
+            </h2>
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 text-center">
+                        <i class="fa-solid fa-robot text-primary text-3xl mb-3"></i>
+                        <h3 class="font-bold mb-2">技術價值</h3>
+                        <p class="text-sm text-gray-600">3大AI體驗模組（情緒翻譯、智慧餵食、健康監測），建立技術示範標杆</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 text-center">
+                        <i class="fa-solid fa-bullhorn text-primary text-3xl mb-3"></i>
+                        <h3 class="font-bold mb-2">品牌價值</h3>
+                        <p class="text-sm text-gray-600">快閃店+社群傳播，提升品牌科技屬性與溫度感，觸達潛在目標客群</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 text-center">
+                        <i class="fa-solid fa-database text-primary text-3xl mb-3"></i>
+                        <h3 class="font-bold mb-2">數據價值</h3>
+                        <p class="text-sm text-gray-600">收集1000+份用戶行為數據，為後續產品開發、行銷策略提供決策依據</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-primary/10 rounded-lg">
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-people-group text-secondary"></i>組織優勢
+                    </h3>
+                    <p class="text-gray-700">採用「強矩陣型組織」，專案經理高權限協調行銷、技術、設計多部門，確保資源高效整合與專案進度管控。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 目標人群分析 -->
+        <section class="mb-12 opacity-0" id="section4">
+            <h2 class="section-title">
+                <i class="fa-solid fa-users text-primary"></i>
+                目標人群分析
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-user-pet text-secondary"></i>核心人群：寵物飼主
+                    </h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check-circle text-primary mt-1"></i>
+                            <span><b>年齡層：</b>25-45歲，具備一定消費能力</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check-circle text-primary mt-1"></i>
+                            <span><b>特徵：</b>關注寵物健康、熱愛科技產品、習慣社群分享</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check-circle text-primary mt-1"></i>
+                            <span><b>需求：</b>便捷的寵物照護工具、沉浸式互動體驗、專業養寵知識</span>
+                        </li>
+                    </ul>
+                    <h3 class="font-bold text-lg mb-3 mt-6 flex items-center gap-2">
+                        <i class="fa-solid fa-handshake text-secondary"></i>次要人群：合作夥伴
+                    </h3>
+                    <p class="text-gray-700">寵物食品公司、保險公司、公益機構，透過快閃店異業合作，擴大生態圈影響力。</p>
+                </div>
+                <!-- 人群結構圖表 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover flex items-center justify-center">
+                    <div class="h-64 w-full">
+                        <canvas id="audienceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 行銷推廣方案 -->
+        <section class="mb-12 opacity-0" id="section5">
+            <h2 class="section-title">
+                <i class="fa-solid fa-bullseye text-primary"></i>
+                行銷推廣方案
+            </h2>
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen-button text-secondary"></i>線上推廣
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>社群媒體：FB/IG/小紅書發布AI體驗預告、寵物故事內容</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>KOL合作：邀請寵物博主、科技博主提前體驗並分享</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>線上預約：開放快閃店體驗預約，贈送小禮品（如寵物零食）</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-store text-secondary"></i>線下推廣
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>開幕活動：邀請公益機構參與，舉辦「寵物健康義診」</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>互動體驗：現場AI情緒翻譯、智慧餵食體驗，完成可抽獎</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-square-check text-primary mt-1"></i>
+                                <span>商圈曝光：在商場入口、電梯張貼快閃店海報，吸引路人流</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 內容創意方向 -->
+        <section class="mb-12 opacity-0" id="section6">
+            <h2 class="section-title">
+                <i class="fa-solid fa-lightbulb text-primary"></i>
+                內容創意方向
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- AI體驗內容 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-microchip text-primary text-4xl"></i>
+                        <h3 class="font-bold text-lg mt-2">AI互動內容</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li>• AI寵物情緒翻譯：即時分析寵物表情/動作，生成「情緒報告」</li>
+                        <li>• 智慧健康監測：透過體重、毛色分析，給出養護建議</li>
+                        <li>• AI寵愛APP：現場下載，可同步體驗數據至手機</li>
+                    </ul>
+                </div>
+                <!-- 公益內容 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-heart-paw text-primary text-4xl"></i>
+                        <h3 class="font-bold text-lg mt-2">公益溫度內容</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li>• 「寵物福祉講座」：邀請獸醫分享科學養寵知識</li>
+                        <li>• 公益捐贈：每1位體驗者，品牌捐10元至流浪動物救助機構</li>
+                        <li>• 流浪寵物領養宣傳：展示救助機構寵物資訊，鼓勵領養</li>
+                    </ul>
+                </div>
+                <!-- 社群內容 -->
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fa-solid fa-share-nodes text-primary text-4xl"></i>
+                        <h3 class="font-bold text-lg mt-2">社群傳播內容</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li>• 「我的寵物AI報告」：用戶分享體驗報告至社群，可領獎品</li>
+                        <li>• 短影片：拍攝AI互動趣味瞬間，上傳抖音/快手引流</li>
+                        <li>• 用戶故事：採訪資深飼主，製作「寵物與科技」主題內容</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 達人選擇策略報告 -->
+        <section class="mb-12 opacity-0" id="section7">
+            <h2 class="section-title">
+                <i class="fa-solid fa-user-check text-primary"></i>
+                達人選擇策略報告
+            </h2>
+            <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-filter text-secondary"></i>達人類型選擇
+                        </h3>
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-primary/10">
+                                <tr>
+                                    <th class="p-2 rounded-tl-lg">達人類型</th>
+                                    <th class="p-2 rounded-tr-lg">選擇理由</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-2 font-medium">寵物垂直博主</td>
+                                    <td class="p-2">受众精准（飼主），信任度高</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-2 font-medium">科技博主</td>
+                                    <td class="p-2">可專業解讀AI技術，強化科技屬性</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-medium">公益KOL</td>
+                                    <td class="p-2">契合福祉理念，提升品牌好感度</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-ruler-combined text-secondary"></i>篩選標準
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span><b>受众匹配：</b>粉絲中飼主占比≥60%</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span><b>互動率：</b>平均互動率≥3%（高於行業均值）</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span><b>內容風格：</b>專業且有溫度，無負面歷史</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-primary mt-1"></i>
+                                <span><b>地域匹配：</b>快閃店所在城市達人優先</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-sitemap text-secondary"></i>合作模式
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="p-3 bg-primary/5 rounded-lg">
+                                <b>預熱期（開幕前2周）：</b><br>
+                                達人發布「AI體驗預告」，帶話題#寵AI智FUN館
+                            </li>
+                            <li class="p-3 bg-primary/5 rounded-lg">
+                                <b>高峰期（開幕當周）：</b><br>
+                                達人現場體驗直播，帶粉絲互動抽獎
+                            </li>
+                            <li class="p-3 bg-primary/5 rounded-lg">
+                                <b>延續期（閉幕後1周）：</b><br>
+                                達人發布體驗總結，強化品牌記憶點
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-3 mb-4">
+                <i class="fa-solid fa-paw text-primary text-2xl"></i>
+                <h2 class="text-xl font-bold">寵AI智FUN館 - 寵物AI快閃店專案</h2>
+            </div>
+            <p class="text-gray-400 text-sm">專案時程：2025/10/02 ~ 2026/04/15 | 聯絡方式：project@petai-fun.com</p>
+            <div class="flex justify-center gap-4 mt-6">
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. 滾動淡入效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id^="section"]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animation = 'fade-in 0.8s ease-in-out';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 2. 市場分析圖表（柱狀圖）
+            const marketCtx = document.getElementById('marketChart').getContext('2d');
+            new Chart(marketCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['寵物智慧照護需求', 'AI互動體驗需求', '寵物福祉關注度'],
+                    datasets: [{
+                        label: '市場需求強度（1-10分）',
+                        data: [8.5, 9.2, 7.8],
+                        backgroundColor: [
+                            'rgba(74, 222, 128, 0.6)',
+                            'rgba(56, 189, 248, 0.6)',
+                            'rgba(168, 85, 247, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(74, 222, 128, 1)',
+                            'rgba(56, 189, 248, 1)',
+                            'rgba(168, 85, 247, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            title: {
+                                display: true,
+                                text: '需求強度'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: '寵物市場核心需求強度',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 3. 目標人群圖表（餅圖）
+            const audienceCtx = document.getElementById('audienceChart').getContext('2d');
+            new Chart(audienceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['25-35歲飼主', '36-45歲飼主', '寵物產業合作夥伴', '其他'],
+                    datasets: [{
+                        data: [55, 30, 10, 5],
+                        backgroundColor: [
+                            'rgba(74, 222, 128, 0.7)',
+                            'rgba(56, 189, 248, 0.7)',
+                            'rgba(168, 85, 247, 0.7)',
+                            'rgba(156, 163, 175, 0.7)'
+                        ],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '目標人群結構占比',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            padding: {
+                                bottom: 20
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 4. 平滑滾動
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        document.querySelector(targetId).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
